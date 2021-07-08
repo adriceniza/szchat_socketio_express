@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zive</title>
+    <link rel="shortcut icon" href="/assets\logo.png" />
+    <script
+      src="https://kit.fontawesome.com/b93b4f60ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login" id="login">
+        <div class="login">
+          <form
+            onsubmit="return logIn(this)"
+            id="formLogin"
+            class="form-container"
+          >
+            <input
+              id="name"
+              type="text"
+              name="name"
+              autocomplete="off"
+              class="name"
+              required
+              placeholder="What's your name?"
+            />
+            <button class="buttonLogin">JOIN</button>
+          </form>
+          <div class="welcomeUser" id="welcomeUser">
+            <h1 id="welcomeUserH1"></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat" id="chat">
+        <div class="title">
+          <h1>SZChat</h1>
+        </div>
+        <div class="shortMenu">
+          <h1>Users</h1>
+          <ul id="usersList"></ul>
+        </div>
+        <div class="listMessages" id="messages"></div>
+        <div class="writeBar">
+          <form id="chatForm" onsubmit="return addMessage(this)">
+            <input
+              autocomplete="off"
+              type="text"
+              id="message"
+              name="text"
+              placeholder="Type here..."
+              required
+            />
+            <button type="submit" id="buttonMessage">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
